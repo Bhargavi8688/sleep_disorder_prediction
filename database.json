@@ -1,0 +1,169 @@
+[
+  {
+    "name": "Admin",
+    "email": "test@a1hospital.com",
+    "password": "$2a$10$7zB3pM9S7S6R.6.E6.6.6.Oq1V7Z1V7Z1V7Z1V7Z1V7Z1V7Z1V7Z"
+  },
+  {
+    "name": "vyshnavi",
+    "email": "vyshnavi@gmail.com",
+    "phone": "8978215014",
+    "password": "$2b$10$2cq7PBROvaveuxAt4KRTZ.I7XX93/6yGW1jO4lFkauuaqyAXI3fkK"
+  },
+  {
+    "name": "Suhana",
+    "email": "patansuhana01@gmail.com",
+    "phone": "6302636003",
+    "password": "$2b$10$q7.C0MJqKpThtWHs4tMxA.st3SwUvGlQ8AmVWYzM4kS6v9LzEIL7K"
+  },
+  {
+    "name": "Peram Bhargavi",
+    "email": "bhargaviperam5@gmail.com",
+    "phone": "8688372301",
+    "password": "$2b$10$f..Hg6PJe3A3L7PUaljKauSoay9T21clyyzzC/DsXkFudAlUkraYO"
+  },
+  {
+    "name": "Patan Suhana",
+    "email": "patansuhana02@gmail.com",
+    "phone": "6302636003",
+    "password": "$2b$10$.3YuLaDxEaVjSAheMZJ0cuaKCr5EheU8Qmy5o2yZETflTZfQteDLS"
+  },
+  {
+    "name": "Radhika",
+    "email": "radi323@gmail.com",
+    "phone": "7793911189",
+    "password": "$2b$10$r6ilJQiAgmvIklvZ8J9B6OjA6asNs6ZwqKqb5Mt6pl/BwZkfRapPa"
+  },
+  {
+    "name": "Saritha",
+    "email": "saritha@gmail.com",
+    "phone": "89873746282",
+    "password": "$2b$10$O4P6X/sl4gdNWD.UUT2y6.PJ3YBaNHF4oN9UTvhyhKA4orQBF.e.m"
+  },
+  {
+    "name": "Peram Bhargavi",
+    "email": "bhargavi@gmail.com",
+    "phone": "8688372301",
+    "password": "$2b$10$7W8W9K/lLs2JAjwc3EkTCuEUjxc/R9AzNAjzxeTyFEFl23UrX6sZW"
+  },
+  {
+    "name": "Peram Bhargavi",
+    "email": "bharagavi@gmail.com",
+    "phone": "8688372301",
+    "password": "$2b$10$5zDLYu8JN4fuJWWM3ghxhOV0JPVIcK71pl/Ayjx9CIJ7ATMyiNWGe"
+  },
+  {
+    "name": "Anil Kumar",
+    "email": "anil@gmail.com",
+    "phone": "8978120039",
+    "password": "$2b$10$kLTLsKvut/iWmEEcxMO60eJPKhsX3etG/9KIeHweQnqQwp4pBtNRG"
+  },
+  {
+    "name": "koushik",
+    "email": "koushik@gmail.com",
+    "phone": "8978215014",
+    "password": "$2b$10$0p1M7I5KX5pCWN5rT4sB5usO9RJz5idRIGrfTXeY4sPdzjiV6GgU2"
+  },
+  {
+    "name": "badabagni",
+    "email": "lakshmidevi5803@gmail.com",
+    "phone": "9052715378",
+    "password": "$2b$10$kVfMAv8Cm3l0NB9j6fQCWeYE57Lx2uAspqi2W6kJ.3eeVF5GAP0Hm"
+  },
+  {
+    "name": "Peram Bhargavi1",
+    "email": "kumar@kn1.com",
+    "phone": "8688372301",
+    "password": "$2b$10$5cXlXs5G7G81m/wnjEIUQuKIUqb4RnXP4ZrMra6XfO762ZRyVBJBi"
+  },
+  {
+    "name": "bharath",
+    "email": "bkumar199309@gmail.com",
+    "phone": "8151877069",
+    "password": "$2b$10$Qg4./LRd/BfsoaCMkNqzROxMTa.NzT53mrKO7HsvdVfQJrrnb82.i"
+  },
+  {
+    "name": "Peram Bhargavi",
+    "email": "bhargaviperam25@gmail.com",
+    "phone": "8688372301",
+    "password": "$2b$10$jxTzftcr28DjNEAD3gJepOiK9yziKnSY6QsMy5.6iBEVQHGQSmp8O"
+  },
+  {
+    "name": "Peram Bhargavi",
+    "email": "bhargaviperam8688@gmail.com",
+    "phone": "8688372301",
+    "password": "$2b$10$UWf6YnvORY39e6uSolfLJu5l0lNTrVTQHeLL/W1KwaWWerl51OqqS"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1774784256931@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$10674SZGXYFQS/sgquoRm.R8JEHOQhNunBJ6QIIsurRJEYS9i2UZG"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1774784290607@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$z9TfNyG6MnZhXfLBBItwwe5erKrJHKZ8SYxZP6EdQe0gnjyrwO5SK"
+  },
+  {
+    "name": "Kumar",
+    "email": "Kumar4@Test.com",
+    "phone": "1234567890",
+    "password": "$2b$10$g1kFQwkPUm5z3RE0fk/h0.P3rL7m14.UIhtGv1AuTToDbjVAqnuFC"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1775985488706@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$Dskil.zd5hhx0XVTotEQX.4SYKTGJ7/TnPhAJ5l6U5oRPx8D3bl7y"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1775985530557@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$m6UBnpWuQtxSr96q7BO3F.ggpwzQVkaTzjQL8bTP.FqUrd3gh4dBS"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1775986514053@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$4KmLXI9DfVRJjjKKvfKRkud5UkmLms5I0N7KakxL2BD/6cMaeZoqi"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1775986521865@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$ZEqi4.uA8baB/C/Rlgu/3.dJ1vr4wNy.yBFTFhkwxXom3ya//Gcly"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1775987088572@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$i9Si.i.Al2sFW59Wds7/4uPU1itGT56s7f1Hkvxd.RLeDkRkp9PUm"
+  },
+  {
+    "name": "Test User",
+    "email": "testuser_1775987092483@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$v6CJUXguJcAz7WgOvt415ehNLHMjyfB226BGEnB9QwcR2G2VsSodC"
+  },
+  {
+    "name": "PhoneTestInvalid",
+    "email": "phone_invalid_1775987193@test.com",
+    "phone": "5123456789",
+    "password": "$2b$10$ncy4gVPj57UDO89olOfzU.xIWqwOIxiWDZRnehVoRXrWMspxZnKoW"
+  },
+  {
+    "name": "PhoneTestValid",
+    "email": "phone_valid_1775987194@test.com",
+    "phone": "9876543210",
+    "password": "$2b$10$BSc2I0IJNLXc35H/Pbgz/O7z/lB3ZqDLXpDEsLN6npFXPyoSml1uq"
+  },
+  {
+    "name": "kalavathi",
+    "email": "204g1a3204@srit.ac.in",
+    "phone": "8688372301",
+    "password": "$2b$10$UPaVJmZemJNgEcx.MatoA.k2zMiCOrdrgwY.bEtViIAsamDqvGZJy"
+  }
+]

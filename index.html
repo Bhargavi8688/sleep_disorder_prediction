@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classification of Sleep Disorders</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background-color: #050a14; color: white; line-height: 1.6; }
+        
+        nav { 
+            position: fixed; top: 0; width: 100%; display: flex; 
+            justify-content: space-between; align-items: center; 
+            padding: 20px 80px; background: rgba(5, 10, 20, 0.95); z-index: 1000; 
+        }
+        .logo { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; }
+        .logo span { color: #f39c12; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 30px; font-weight: bold; font-size: 0.85rem; }
+        .admin-btn { border: 2px solid #f39c12; padding: 5px 15px; border-radius: 5px; color: #f39c12 !important; }
+
+        .hero { 
+            height: 100vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            url('https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2060&auto=format&fit=crop');
+            background-size: cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .hero h1 { font-size: 3rem; max-width: 800px; text-transform: uppercase; padding: 0 20px; }
+        .hero span { color: #f39c12; }
+
+        .about-section { padding: 100px 80px; background: #0b1120; display: flex; align-items: center; gap: 50px; justify-content: center; }
+        .about-image { flex: 0 0 380px; }
+        .about-image img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .about-text { flex: 1; max-width: 600px; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: #f39c12; }
+
+        /* Modal Styles */
+        .modal { 
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            background: white; color: #333; padding: 40px; border-radius: 10px; z-index: 2000; width: 400px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        .modal h2 { margin-bottom: 20px; text-align: center; color: #050a14; }
+        .modal input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; display: block; }
+        .submit-btn { background: #f39c12; color: white; width: 100%; padding: 12px; border: none; font-weight: bold; cursor: pointer; margin-top: 10px; border-radius: 5px; }
+        .submit-btn:hover { background: #e67e22; }
+        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1500; }
+        
+        .switch-text { text-align: center; margin-top: 15px; font-size: 0.9rem; }
+        .switch-text a { color: #3498db; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CLASSIFICATION OF <span>SLEEP DISORDERS</span></div>
+        <div class="nav-links">
+            <a href="/">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="javascript:void(0)" onclick="openModal('regModal')">REGISTER</a>
+            <a href="javascript:void(0)" onclick="openModal('loginModal')">LOGIN</a>
+            <a href="/admin-login" class="admin-btn">ADMIN</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>AN ENSEMBLE LEARNING APPROACH FOR IMPROVED <span> SLEEP DISORDER PREDICTION</span></h1>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop" alt="Sleep Study">
+        </div>
+        <div class="about-text">
+            <h2>About</h2>
+            <div style="margin-bottom: 60px; color: #d1d1d1; font-size: 1.05rem; text-align: justify;">
+                <p style="margin-top: 10px; font-size: 0.95rem; color: #ccc;">
+                   This project is a <strong>web-based sleep disorder prediction system</strong> designed to help users assess their sleep health using personal and lifestyle data. The application collects details such as age, gender, blood pressure, heart rate, sleep duration, BMI category, snoring pattern, diet habits, stress-related behavior, previous health history, and work hours to generate a prediction report. It uses an <strong>ensemble learning approach</strong> that combines <strong>K-Nearest Neighbors (KNN)</strong>, <strong>Support Vector Machine (SVM)</strong>, and <strong>Random Forest</strong> models to classify the user's condition into <strong>Low</strong>, <strong>Moderate</strong>, or <strong>High</strong> risk levels. In addition to prediction, the system provides secure user registration and login, stores generated reports for later review, and includes an admin module for monitoring records and supporting doctor consultation workflow.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div id="overlay" class="overlay" onclick="closeModals()"></div>
+
+    <div id="regModal" class="modal">
+        <h2>Register</h2>
+        <form id="registrationForm" action="/register" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            
+            <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+                <input type="email" id="regEmail" name="email" placeholder="Email Address" required style="flex: 1; margin: 0;">
+                <button type="button" onclick="sendOTP('email')" style="background:#3498db; color:white; border:none; padding:0 10px; border-radius:5px; cursor:pointer; font-size:0.8rem;">Send OTP</button>
+            </div>
+            
+            <input type="tel" id="regPhone" name="phone" placeholder="Phone Number (Mandatory for Doctor Consultation)" pattern="[6-9][0-9]{9}" required style="width:100%; margin: 0 0 10px 0; padding:12px; border:1px solid #ccc; border-radius:5px; display:block;">
+
+            <input type="password" name="password" placeholder="Password (Min 8 chars)" required>
+
+            <div id="otpInputSection" style="display:none; margin-top: 15px; border: 1px dashed #f39c12; padding: 15px; border-radius: 8px; background: #fdfaf4;">
+                <p style="font-size: 0.85rem; color: #333; margin-bottom: 10px;">Enter the 6-digit OTP sent to your email:</p>
+                <input type="text" id="otpValue" placeholder="Enter OTP" style="margin-bottom: 10px;">
+                <button type="button" onclick="verifyOTP()" class="submit-btn" style="background: #2ecc71; margin: 0;">VERIFY & REGISTER</button>
+            </div>
+
+            <button type="submit" id="mainSubmitBtn" class="submit-btn">CREATE ACCOUNT</button>
+        </form>
+        <div class="switch-text">Already have an account? <a href="javascript:void(0)" onclick="switchModal('loginModal')">Login</a></div>
+    </div>
+
+    <div id="loginModal" class="modal">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="submit-btn">LOG IN</button>
+        </form>
+        <div class="switch-text">New user? <a href="javascript:void(0)" onclick="switchModal('regModal')">Register</a> | <a href="javascript:void(0)" onclick="switchModal('forgotPasswordModal')">Forgot Password?</a></div>
+    </div>
+
+    <div id="forgotPasswordModal" class="modal">
+        <h2>Reset Password</h2>
+        <form id="forgotPasswordForm">
+            <input type="email" id="forgotEmail" placeholder="Enter your Email Address" required>
+            <button type="button" onclick="sendResetOTP()" class="submit-btn" style="background: #3498db;">Send Reset OTP</button>
+        </form>
+        <div id="resetOtpSection" style="display:none; margin-top: 15px;">
+            <input type="text" id="resetOtpValue" placeholder="Enter OTP" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:5px; margin-bottom:10px; display:block;">
+            <input type="password" id="newPasswordValue" placeholder="New Password (Min 8 chars)" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:5px; margin-bottom:10px; display:block;">
+            <button type="button" onclick="resetPassword()" class="submit-btn" style="background: #2ecc71;">RESET PASSWORD</button>
+        </div>
+        <div class="switch-text">Back to <a href="javascript:void(0)" onclick="switchModal('loginModal')">Login</a></div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModals() {
+            document.getElementById('regModal').style.display = 'none';
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('forgotPasswordModal').style.display = 'none';
+            document.getElementById('resetOtpSection').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            // Reset form fields
+            document.getElementById('forgotEmail').value = '';
+            document.getElementById('resetOtpValue').value = '';
+            document.getElementById('newPasswordValue').value = '';
+        }
+
+        function switchModal(id) { 
+            closeModals(); 
+            setTimeout(() => openModal(id), 100); 
+        }
+
+        function sendOTP(type) {
+            const value = document.getElementById('regEmail').value;
+            if(!value) { alert("Please enter email first!"); return; }
+
+            fetch('/send-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type: 'email', receiver: value })
+            })
+            .then(res => {
+                if(res.ok) {
+                    document.getElementById('otpInputSection').style.display = 'block';
+                    document.getElementById('mainSubmitBtn').style.display = 'none';
+                    alert("OTP has been sent to your email");
+                } else {
+                    alert("Error sending OTP!");
+                }
+            });
+        }
+
+        function verifyOTP() {
+            const otp = document.getElementById('otpValue').value;
+            fetch('/verify-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ otp: otp })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    alert("Email verified successfully!");
+                    document.getElementById('registrationForm').submit();
+                } else {
+                    alert("Invalid OTP!");
+                }
+            });
+        }
+
+        function sendResetOTP() {
+            const email = document.getElementById('forgotEmail').value;
+            if(!email) { alert("Please enter email address!"); return; }
+
+            fetch('/forgot-password', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    document.getElementById('resetOtpSection').style.display = 'block';
+                    alert("OTP sent to your email address");
+                } else {
+                    alert(data.message || "Email not found");
+                }
+            });
+        }
+
+        function resetPassword() {
+            const email = document.getElementById('forgotEmail').value;
+            const otp = document.getElementById('resetOtpValue').value;
+            const newPassword = document.getElementById('newPasswordValue').value;
+
+            if(!email || !otp || !newPassword) { alert("Please fill all fields!"); return; }
+
+            fetch('/reset-password', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, otp: otp, newPassword: newPassword })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    alert("Password reset successfully!");
+                    closeModals();
+                    setTimeout(() => openModal('loginModal'), 100);
+                } else {
+                    alert(data.message || "Error resetting password");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
