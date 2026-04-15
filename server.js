@@ -6,9 +6,13 @@ const fs = require('fs');
 const KNN = require('ml-knn');
 const { RandomForestClassifier } = require('ml-random-forest');
 const SVM = require('libsvm-js/asm');
+const cors = require('cors');
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); 
+app.use(express.urlencoded({ extended: true }));
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 // This line allows the server to serve your index.html correctly
@@ -1337,12 +1341,12 @@ let tempOTP;
 let tempResetOTP = {}; // Store reset OTPs with email as key
 let adminResetOTP = {}; // Store admin reset OTPs with email as key
 
-// Email configuration
+// Email configuration from environment variables
 const emailConfig = {
     service: 'gmail',
     auth: {
-        user: 'bhargaviperam5@gmail.com',
-        pass: 'sysp idbl isuh wlwh'
+        user: process.env.EMAIL_USER || 'bhargaviperam5@gmail.com',
+        pass: process.env.EMAIL_PASS || 'sysp idbl isuh wlwh'
     }
 };
 
@@ -1357,7 +1361,7 @@ app.post('/send-otp', async (req, res) => {
         let transporter = nodemailer.createTransport(emailConfig);
 
         let mailOptions = {
-            from: 'bhargaviperam5@gmail.com', 
+            from: process.env.EMAIL_USER || 'bhargaviperam5@gmail.com', 
             to: receiver,
             subject: 'Your OTP for Registration',
             text: `Your OTP is: ${tempOTP}. This is valid for 5 minutes.`
@@ -1403,7 +1407,7 @@ app.post('/forgot-password', async (req, res) => {
 
     let transporter = nodemailer.createTransport(emailConfig);
     let mailOptions = {
-        from: 'bhargaviperam5@gmail.com',
+        from: process.env.EMAIL_USER || 'bhargaviperam5@gmail.com',
         to: email,
         subject: 'Password Reset OTP',
         text: `Your OTP for password reset is: ${resetOTP}. This is valid for 5 minutes.`
@@ -1480,7 +1484,7 @@ app.post('/admin-send-reset-otp', async (req, res) => {
 
         let transporter = nodemailer.createTransport(emailConfig);
         let mailOptions = {
-            from: 'bhargaviperam5@gmail.com',
+            from: process.env.EMAIL_USER || 'bhargaviperam5@gmail.com',
             to: email,
             subject: 'Hospital Admin - Password Reset OTP',
             text: `Your OTP for admin password reset is: ${resetOTP}. This is valid for 5 minutes. Do not share this OTP with anyone.`

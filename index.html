@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Classification of Sleep Disorders</title>
+    <link rel="manifest" href="manifest.json">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; background-color: #050a14; color: white; line-height: 1.6; }
@@ -232,6 +233,11 @@
                     alert(data.message || "Error resetting password");
                 }
             });
+        }
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
         }
     </script>
 </body>
